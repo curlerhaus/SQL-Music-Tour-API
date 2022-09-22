@@ -15,11 +15,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// LISTEN
-app.listen(process.env.PORT, () => {
-  console.log(`🎸 Rockin' on port: ${process.env.PORT}`);
-});
-
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize(process.env.PG_URI);
 
@@ -29,3 +24,7 @@ try {
 } catch (err) {
   console.log(`Unable to connect to PG: ${err}`);
 }
+// LISTEN
+app.listen(process.env.PORT, () => {
+  console.log(`🎸 Rockin' on port: ${process.env.PORT}`);
+});
