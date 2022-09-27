@@ -1,9 +1,11 @@
 "use strict";
 const { Model } = require("sequelize");
+const meetgreet = require("./meetgreet");
 module.exports = (sequelize, DataTypes) => {
   class Band extends Model {
     static associate({ MeetGreet, SetTime }) {
       // meet and greets
+      // console.log("modles in band associal!", models);
       Band.hasMany(MeetGreet, {
         foreignKey: "band_id",
         as: "meet_greets",
